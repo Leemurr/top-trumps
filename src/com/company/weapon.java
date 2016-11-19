@@ -1,28 +1,16 @@
 package com.company;
 
-public class weapon {
+public class weapon extends deck {
 
-    public float weight;
-    public int damage;
-    public float reloadSpeed;
-    public int magazineSize;
-    public int accuracy;
-    public int range;
-    public String name;
-
-    weapon(float w, int d, float rs, int m, int a, int rng, String nm) {
-        weight = w;
-        damage = d;
-        reloadSpeed = rs;
-        magazineSize = m;
-        accuracy = a;
-        range = rng;
-        name = nm;
-
+    public weapon(float atty1, float atty2, float atty3, float atty4, float atty5, float atty6, String nm) {
+        super(atty1, atty2, atty3, atty4, atty5, atty6, nm);
     }
 
     public String toString() {
-        return (name + "\n\n1. Weight: " + weight + "\n2. Damage: " + damage + "\n3. Reload Speed: " + reloadSpeed + "\n4. Magazine Size: " + magazineSize + "\n5. Accuracy: " + accuracy + "\n6. Range: " + range);
+        return ("\n\n1. Weight: " + att1 + "\n2. Damage: " + att2 + "\n3. Reload Speed: " + att3 + "\n4. Magazine Size: " + att4 + "\n5. Accuracy: " + att5 + "\n6. Range: " + att6);
     }
+
+
 }
+
 
