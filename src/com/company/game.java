@@ -5,7 +5,6 @@ import java.lang.*;
 public class game{
 
     public boolean intro = true;
-    public boolean intro2 = true;
     private deck playerCard;
     private deck cpuCard;
     private float playerAttribute;
@@ -25,20 +24,20 @@ public class game{
 
     game() {
         deck[] weaponList = new deck[6];
-        weaponList[0] = new weapon(12.4f, 85, 4.5f, 6, 75, 10, "Shotgun");
-        weaponList[1] = new weapon(3.2f, 25, 0.8f, 12, 70, 60, "Pistol");
-        weaponList[2] = new weapon(5.4f, 35, 1.4f, 22, 60, 60, "SMG");
-        weaponList[3] = new weapon(5.2f, 50, 1.8f, 32, 80, 80, "Rifle");
-        weaponList[4] = new weapon(6.8f, 75, 2.0f, 8, 90, 110, "Sniper Rifle");
-        weaponList[5] = new weapon(11.3f, 100, 6.0f, 1, 55, 100, "Rocket Launcher");
+        weaponList[0] = new weapon(-12.4f, 85, -4.5f, 6, 75, 10, "Shotgun");
+        weaponList[1] = new weapon(-3.2f, 25, -0.8f, 12, 70, 60, "Pistol");
+        weaponList[2] = new weapon(-5.4f, 35, -1.4f, 22, 60, 60, "SMG");
+        weaponList[3] = new weapon(-5.2f, 50, -1.8f, 32, 80, 80, "Rifle");
+        weaponList[4] = new weapon(-6.8f, 75, -2.0f, 8, 90, 110, "Sniper Rifle");
+        weaponList[5] = new weapon(-11.3f, 100, -6.0f, 1, 55, 100, "Rocket Launcher");
 
         deck[] carList = new deck[6];
-        carList[0] = new car(117, 10.7f, 108, 53, 13.6f, 115, "Ford");
-        carList[1] = new car(130, 8.7f, 140, 80, 21.9f, 389, "BMW");
-        carList[2] = new car(143, 7.6f, 229, 82, 34.4f, 232, "Audi");
-        carList[3] = new car(116, 10.5f, 109, 54, 14.0f, 137, "Mercedes-Benz");
-        carList[4] = new car(193,3.8f, 493, 67, 131.2f, 326, "Porsche");
-        carList[5] = new car(186, 4.5f, 550, 102, 71.2f, 511, "Aston Martin");
+        carList[0] = new car(117, -10.7f, 108, 53, -13.6f, -115, "Ford");
+        carList[1] = new car(130, -8.7f, 140, 80, -21.9f, -389, "BMW");
+        carList[2] = new car(143, -7.6f, 229, 82, -34.4f, -232, "Audi");
+        carList[3] = new car(116, -10.5f, 109, 54, -14.0f, -137, "Mercedes-Benz");
+        carList[4] = new car(193, -3.8f, 493, 67, -131.2f, -326, "Porsche");
+        carList[5] = new car(186, -4.5f, 550, 102, -71.2f, -511, "Aston Martin");
 
         deck[] myDeck = new deck[6];
 
@@ -64,7 +63,6 @@ public class game{
                 System.out.print("Exiting...");
                 intro = false;
                 isRunning = false;
-                intro2 = false;
             }
             else if ( userIn == 2){
                 intro = false;
@@ -74,6 +72,9 @@ public class game{
             }
         }
 
+
+        while (isRunning) {
+            boolean intro2 = true;
         while (intro2){
             System.out.print("\n1. Weapons\n2. Cars\n3. Exit\n\nWhat game would you like to play?(1 - 3): ");
 
@@ -105,8 +106,6 @@ public class game{
             }
 
         }
-
-        while (isRunning) {
 
             //Shuffles the deck of weapons
             int n = myDeck.length;
@@ -175,7 +174,13 @@ public class game{
                 cpuAttribute = cpuAtts[plyChc - 1];
 
                 //prints out player and cpu attribute stats
-                System.out.print("\nYour Attribute: " + playerAttribute + "\nCPU Attribute: " + cpuAttribute);
+                if (playerAttribute < 0 ){
+                    System.out.print("\nYour Attribute: " + -playerAttribute + "\nCPU Attribute: " + -cpuAttribute);
+                }
+                else {
+                    System.out.print("\nYour Attribute: " + playerAttribute + "\nCPU Attribute: " + cpuAttribute);
+                }
+
 
                 //compare attributes
                 if (playerAttribute > cpuAttribute) {
@@ -215,7 +220,6 @@ public class game{
                 plyScore = 0;
             }
         }
-
     }
 }
 

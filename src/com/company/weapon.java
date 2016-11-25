@@ -7,7 +7,7 @@ public class weapon extends deck {
     }
 
     public String toString() {
-        return (name + "\n\n1. Weight: " + att1 + "\n2. Damage: " + att2 + "\n3. Reload Speed: " + att3 + "\n4. Magazine Size: " + att4 + "\n5. Accuracy: " + att5 + "\n6. Range: " + att6);
+        return (name + "\n\n1. Weight: " + att1 + "\n2. Damage: " + att2 + "\n3. Reload Speed: " + -att3 + "\n4. Magazine Size: " + att4 + "\n5. Accuracy: " + att5 + "\n6. Range: " + att6);
     }
 
 
